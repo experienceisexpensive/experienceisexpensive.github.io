@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: #e08a87;
+  color: #c75d59;
   text-decoration: none;
 }
 a:hover, a:focus { text-decoration: underline; }
@@ -30,7 +30,7 @@ a:hover, a:focus { text-decoration: underline; }
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255, 255, 255, 0.5);
-  background-color: #e08a87;
+  background-color: #c75d59;
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -145,7 +145,7 @@ p { margin: 0 0 1rem; }
 .schedule td { padding: 0.55rem 0.5rem; border-bottom: 1px solid #e5e5e5; }
 .schedule td:first-child {
   font-variant-numeric: tabular-nums;
-  color: #e08a87;
+  color: #c75d59;
   font-weight: 700;
   width: 4.5rem;
 }
