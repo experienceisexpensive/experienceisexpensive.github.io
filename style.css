@@ -110,6 +110,17 @@ a:hover, a:focus { text-decoration: underline; }
   }
 }
 
+.corl-logo {
+  display: block;
+  margin: 0 0 2.5rem;
+}
+.corl-logo img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
 section { margin-bottom: 3rem; scroll-margin-top: 2rem; }
 
 h2 {

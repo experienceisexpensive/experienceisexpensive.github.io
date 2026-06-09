@@ -1,0 +1,6 @@
+[tools]
+node = "lts"
+
+[tasks.serve]
+description = "Serve the site locally with live-reload on file changes"
+run = "npx --yes live-server"
