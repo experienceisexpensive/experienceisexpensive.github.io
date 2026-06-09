@@ -5,29 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience is Expensive — CoRL 2026 Workshop</title>
   <meta name="description" content="Experience is Expensive: a workshop on data efficiency in robot learning at CoRL 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <p class="venue">CoRL 2026 Workshop</p>
-      <h1>Experience is Expensive</h1>
-      <p class="tagline">Toward data-efficient robot learning in a world where every trial has a cost.</p>
-      <p class="meta">📍 TBD &nbsp;·&nbsp; 🗓️ TBD, 2026</p>
-    </div>
-  </header>
+  <div class="sidebar">
+    <div class="sidebar-sticky">
+      <div class="sidebar-about">
+        <h1>Experience is Expensive</h1>
+        <p class="lead">A CoRL 2026 workshop on data-efficient robot learning, where every trial has a cost.</p>
+        <p class="when">📍 TBD &nbsp;·&nbsp; 🗓️ TBD, 2026</p>
+      </div>
 
-  <nav class="nav">
-    <div class="container">
-      <a href="#about">About</a>
-      <a href="#speakers">Speakers</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#cfp">Call for Papers</a>
-      <a href="#organizers">Organizers</a>
-    </div>
-  </nav>
+      <nav class="sidebar-nav">
+        <a class="sidebar-nav-item" href="#about">About</a>
+        <a class="sidebar-nav-item" href="#speakers">Speakers</a>
+        <a class="sidebar-nav-item" href="#schedule">Schedule</a>
+        <a class="sidebar-nav-item" href="#cfp">Call for Papers</a>
+        <a class="sidebar-nav-item" href="#organizers">Organizers</a>
+      </nav>
 
-  <main class="container">
+      <p class="copyright">CoRL 2026 · <a href="mailto:contact@example.com">contact@example.com</a></p>
+    </div>
+  </div>
+
+  <main class="content">
     <section id="about">
       <h2>About</h2>
       <p>
@@ -81,10 +85,19 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>Experience is Expensive · CoRL 2026 Workshop · <a href="mailto:contact@example.com">contact@example.com</a></p>
-    </div>
-  </footer>
+  <script>
+    // Lightweight scroll-spy: highlight the sidebar link for the section in view.
+    const links = [...document.querySelectorAll('.sidebar-nav-item')];
+    const byId = id => links.find(l => l.getAttribute('href') === '#' + id);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          byId(e.target.id)?.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section').forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
