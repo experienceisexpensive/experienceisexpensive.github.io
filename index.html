@@ -110,18 +110,39 @@
   </main>
 
   <script>
-    // Lightweight scroll-spy: highlight the sidebar link for the section in view.
     const links = [...document.querySelectorAll('.sidebar-nav-item')];
-    const byId = id => links.find(l => l.getAttribute('href') === '#' + id);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          byId(e.target.id)?.classList.add('active');
-        }
+    const sections = [...document.querySelectorAll('main section')];
+
+    // Clicking a nav item centers its section in the viewport.
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.getElementById(link.getAttribute('href').slice(1));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        history.replaceState(null, '', link.getAttribute('href'));
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('main section').forEach(s => observer.observe(s));
+    });
+
+    // Scroll-spy: highlight the section crossing the viewport center, so the
+    // active link matches where a click lands the section.
+    const setActive = () => {
+      const mid = window.scrollY + window.innerHeight / 2;
+      let current = sections[0];
+      for (const s of sections) {
+        if (s.offsetTop <= mid) current = s;
+      }
+      if (window.scrollY <= 4) current = sections[0]; // pinned at top
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        current = sections[sections.length - 1]; // pinned at bottom
+      }
+      links.forEach(l =>
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current.id)
+      );
+    };
+    window.addEventListener('scroll', setActive, { passive: true });
+    window.addEventListener('resize', setActive);
+    setActive();
   </script>
 </body>
 </html>
