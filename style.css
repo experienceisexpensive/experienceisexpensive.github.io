@@ -168,7 +168,11 @@ p { margin: 0 0 1rem; }
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.75rem 1.5rem;
+  /* The grid stays left-aligned (margin 0); the row-balancing script caps its
+     width so wrapped rows hold a roughly equal count, and justify-content
+     centers the shorter last row under the full rows above. */
 }
 .person {
   width: 120px;

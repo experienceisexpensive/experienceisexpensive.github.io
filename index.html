@@ -180,6 +180,30 @@
     window.addEventListener('scroll', setActive, { passive: true });
     window.addEventListener('resize', setActive);
     setActive();
+
+    // Balance people grids: when avatars wrap onto multiple rows, cap the
+    // grid width so each row holds a roughly equal count (e.g. 9 -> 5+4
+    // rather than 7+2). Centering is handled in CSS.
+    const grids = [...document.querySelectorAll('.people')];
+    const balanceGrids = () => {
+      grids.forEach(grid => {
+        const items = grid.children;
+        const n = items.length;
+        if (n < 2) return;
+        grid.style.maxWidth = '';                       // measure natural width
+        const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+        const itemW = items[0].getBoundingClientRect().width;
+        const avail = grid.getBoundingClientRect().width;
+        const perRow = Math.max(1, Math.floor((avail + gap) / (itemW + gap)));
+        const balanced = Math.ceil(n / Math.ceil(n / perRow));   // even rows
+        // Cap to the balanced row width so the grid shrinks to its content and
+        // stays left-aligned (a single row that fits sets balanced = n).
+        grid.style.maxWidth = balanced * itemW + (balanced - 1) * gap + 1 + 'px';
+      });
+    };
+    window.addEventListener('resize', balanceGrids);
+    window.addEventListener('load', balanceGrids);      // re-run once images size
+    balanceGrids();
   </script>
 </body>
 </html>
