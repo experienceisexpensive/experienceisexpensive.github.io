@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience is Expensive — CoRL 2026 Workshop</title>
-  <meta name="description" content="Experience is Expensive: a workshop on data efficiency in robot learning at CoRL 2026." />
+  <meta name="description" content="Experience is Expensive: a CoRL 2026 workshop on sample-efficient robot learning in the real world." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -15,8 +15,8 @@
     <div class="sidebar-sticky">
       <div class="sidebar-about">
         <h1>Experience is Expensive</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-        <p class="when">📍 TBD &nbsp;·&nbsp; 🗓️ TBD, 2026</p>
+        <p class="lead">Sample-efficient robot learning in the real world. A half-day workshop at CoRL 2026.</p>
+        <p class="when">📍 CoRL 2026 &nbsp;·&nbsp; 🗓️ TBD, 2026</p>
       </div>
 
       <nav class="sidebar-nav">
@@ -28,7 +28,7 @@
         <a class="sidebar-nav-item" href="#organizers">Organizers</a>
       </nav>
 
-      <p class="copyright">CoRL 2026 · <a href="mailto:contact@example.com">contact@example.com</a></p>
+      <p class="copyright">CoRL 2026 · <a href="mailto:lasse.peters@berkeley.edu">lasse.peters@berkeley.edu</a></p>
     </div>
   </div>
 
@@ -43,68 +43,105 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Inspired by the recipe that worked for LLMs, modern robot learning chases scale:
+        large datasets, large models, and abundant real-world interaction. But <strong>in embodied
+        settings, real-world experience is arguably orders of magnitude more
+        expensive</strong> than the internet-scale corpora behind LLMs and VLMs. In many of
+        the domains where robotics has the most to offer &mdash; healthcare, space
+        exploration, disaster response, assistive robotics &mdash; the mantra
+        &ldquo;just collect more data&rdquo; is infeasible.
       </p>
       <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.
+        This workshop asks: <strong>how can robots learn reliable real-world behavior on a
+        tight budget of real-world experience?</strong> We organize the open problems into
+        four cross-cutting themes &mdash; <strong>C.A.S.E.</strong>
       </p>
+      <ul class="themes">
+        <li><strong>Cope.</strong> Learn behavior that stays safe across the irreducible gap
+          between training data and deployment, with policies that gauge and act on their own
+          uncertainty rather than fail silently.</li>
+        <li><strong>Acquire.</strong> Lower the price of experience through (semi-)autonomous
+          data collection, self-supervised exploration, automated resets, and active learning
+          that spends a limited interaction budget wisely.</li>
+        <li><strong>Structure.</strong> Inject prior knowledge &mdash; physics-informed models,
+          symbolic components, tailored representations &mdash; so less must be learned from
+          costly data.</li>
+        <li><strong>Exploit.</strong> Extract the most from every data point, fusing modalities
+          such as force, tactile, proprioception, and vision into richer learning signals.</li>
+      </ul>
     </section>
 
     <section id="speakers">
-      <h2>Invited Speakers and Panelists</h2>
+      <h2>Invited Speakers &amp; Panelists</h2>
       <ul class="people">
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Lorem Ipsum</span><span class="affil">Dolor University</span></li>
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Consectetur Elit</span><span class="affil">Adipiscing Institute</span></li>
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Tempor Incididunt</span><span class="affil">Labore Labs</span></li>
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Magna Aliqua</span><span class="affil">Veniam University</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/majumdar.jpg" alt="Anirudha Majumdar" style="--crop-zoom: 1.4; --crop-focus-x: 0.45; --crop-focus-y: 0.0" /></span><span class="name">Anirudha Majumdar</span><span class="affil">Princeton University</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/chalvatzaki.jpg" style="object-position: 50% 5%" alt="Georgia Chalvatzaki" /></span><span class="name">Georgia Chalvatzaki</span><span class="affil">TU Darmstadt</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/kaelbling.jpg" alt="Leslie Pack Kaelbling" /></span><span class="name">Leslie Pack Kaelbling</span><span class="affil">MIT</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/gupta.jpg" alt="Abhishek Gupta" style="--crop-zoom: 1.3; --crop-focus-x: 0.58; --crop-focus-y: 0.0" /></span><span class="name">Abhishek Gupta</span><span class="affil">University of Washington</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/johns.jpg" alt="Edward Johns" style="--crop-zoom: 1.0; --crop-focus-x: 0.5; --crop-focus-y: 0.0" /></span><span class="name">Edward Johns</span><span class="affil">Imperial College London</span></li>
       </ul>
     </section>
 
     <section id="schedule">
       <h2>Schedule</h2>
       <table class="schedule">
-        <tr><td>09:00</td><td>Lorem ipsum dolor sit amet</td></tr>
-        <tr><td>09:15</td><td>Consectetur adipiscing elit</td></tr>
-        <tr><td>10:00</td><td>Sed do eiusmod tempor</td></tr>
-        <tr><td>10:45</td><td>Incididunt ut labore</td></tr>
-        <tr><td>11:15</td><td>Ut enim ad minim veniam</td></tr>
-        <tr><td>12:00</td><td>Quis nostrud exercitation</td></tr>
+        <tr><td>08:40</td><td>Welcome &amp; audience engagement</td></tr>
+        <tr><td>09:00</td><td>Invited talk &mdash; Anirudha Majumdar (Princeton)</td></tr>
+        <tr><td>09:25</td><td>Invited talk &mdash; Georgia Chalvatzaki (TU Darmstadt)</td></tr>
+        <tr><td>09:50</td><td>Lightning talks &mdash; contributed papers</td></tr>
+        <tr><td>10:20</td><td>Coffee break &amp; poster session</td></tr>
+        <tr><td>11:00</td><td>Invited talk &mdash; Abhishek Gupta (UW)</td></tr>
+        <tr><td>11:25</td><td>Invited talk &mdash; Leslie Pack Kaelbling (MIT)</td></tr>
+        <tr><td>11:50</td><td>Interactive panel</td></tr>
+        <tr><td>12:30</td><td>Awards &amp; closing remarks</td></tr>
       </table>
-      <p><em>Lorem ipsum dolor sit amet placeholder.</em></p>
+      <p><em>Half-day program; exact times TBD.</em></p>
     </section>
 
     <section id="cfp">
       <h2>Call for Papers</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris.
+        We invite submissions of up to 4 pages, following the CoRL template and double-blind
+        guidelines, reviewed on OpenReview. Accepted papers are featured as lightning talks and
+        in the poster session, with a <strong>Best Research Award</strong> and a
+        <strong>Most Popular Poster</strong> award. Topics of interest include, but are not
+        limited to:
       </p>
-      <p><strong>Lorem ipsum:</strong> TBD &nbsp;·&nbsp; <strong>Dolor sit:</strong> TBD</p>
-      <p><em>Lorem ipsum submission link placeholder.</em></p>
+      <ul class="themes">
+        <li>Robot learning in domains where &ldquo;just collect more data&rdquo; is impractical.</li>
+        <li>Efficient data acquisition: self-supervised exploration, autonomous data collection.</li>
+        <li>Methods that increase learning signal per trial, e.g. via diverse sensor modalities.</li>
+        <li>Structured approaches combining symbolic and data-driven components, such as offline
+          learning with online planning and control.</li>
+        <li>Uncertainty quantification for resilient behavior beyond the training distribution.</li>
+        <li>Measures and benchmarks for comparable robot learning under data limitations.</li>
+      </ul>
+      <p><em>Submission link and deadlines TBD.</em></p>
     </section>
 
     <section id="dates">
       <h2>Important Dates</h2>
       <table class="dates">
-        <tr><td>TBD</td><td>Lorem ipsum dolor sit amet</td></tr>
-        <tr><td>TBD</td><td>Consectetur adipiscing elit</td></tr>
-        <tr><td>TBD</td><td>Sed do eiusmod tempor</td></tr>
-        <tr><td>TBD</td><td>Incididunt ut labore</td></tr>
+        <tr><td>TBD</td><td>Paper submission deadline</td></tr>
+        <tr><td>TBD</td><td>Acceptance notification</td></tr>
+        <tr><td>TBD</td><td>Camera-ready deadline</td></tr>
+        <tr><td>TBD, 2026</td><td>Workshop at CoRL 2026</td></tr>
       </table>
-      <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing.</em></p>
+      <p><em>Dates to be announced.</em></p>
     </section>
 
     <section id="organizers">
       <h2>Organizers</h2>
       <ul class="people">
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Lorem Ipsum</span><span class="affil">Dolor University</span></li>
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Consectetur Adipiscing</span><span class="affil">Elit Institute</span></li>
-        <li class="person"><img src="assets/avatar-placeholder.svg" alt="" /><span class="name">Sed Eiusmod</span><span class="affil">Tempor Labs</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/peters.jpg" alt="Lasse Peters" /></span><span class="name">Lasse Peters</span><span class="affil">UC Berkeley</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/camara.webp" alt="Fanta Camara" /></span><span class="name">Fanta Camara</span><span class="affil">University of York</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/levy.jpg" alt="Jacob Levy" style="--crop-zoom: 1.8; --crop-focus-x: 0.45; --crop-focus-y: 0.2" /></span><span class="name">Jacob Levy</span><span class="affil">UT Austin</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/longhini.jpg" alt="Alberta Longhini" /></span><span class="name">Alberta Longhini</span><span class="affil">Stanford University</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/barkley.jpg" alt="Brett Barkley" style="--crop-zoom: 1.1; --crop-focus-x: 0.4; --crop-focus-y: 0.0" /></span><span class="name">Brett Barkley</span><span class="affil">UT Austin</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/krasowski.jpg" alt="Hanna Krasowski" style="--crop-zoom: 1.1; --crop-focus-x: 0.5; --crop-focus-y: 0.0" /></span><span class="name">Hanna Krasowski</span><span class="affil">UC Berkeley</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/viljoen.jpg" alt="John Viljoen" style="--crop-zoom: 1.1; --crop-focus-x: 0.5; --crop-focus-y: 0.1" /></span><span class="name">John Viljoen</span><span class="affil">UC Berkeley</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/mehr.webp" alt="Negar Mehr" style="--crop-zoom: 1.2; --crop-focus-x: 0.45; --crop-focus-y: 0.0" /></span><span class="name">Negar Mehr</span><span class="affil">UC Berkeley</span></li>
+        <li class="person"><span class="avatar"><img src="assets/people/fridovich-keil.jpg" alt="David Fridovich-Keil" style="--crop-zoom: 1.5; --crop-focus-x: 0.4; --crop-focus-y: 0.0" /></span><span class="name">David Fridovich-Keil</span><span class="affil">UT Austin</span></li>
       </ul>
     </section>
   </main>
