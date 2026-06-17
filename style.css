@@ -103,25 +103,24 @@ a:hover, a:focus { text-decoration: underline; }
 }
 @media (min-width: 48em) {
   .content {
-    max-width: 40rem;
-    margin-left: 20rem;
-    margin-right: 2rem;
-    padding: 4rem 0;
+    /* Fill the space right of the 18rem sidebar; widen with the viewport
+       but cap the measure so long-form text stays readable. */
+    max-width: 60rem;
+    /* Sit 2rem past the 18rem sidebar normally. Never let the right margin
+       exceed 1/4 of the viewport: once it would, push the surplus to the left.
+       Right margin = 100vw - margin-left - 60rem; capping it at 100vw/4 and
+       solving gives margin-left = 3/4·100vw - 60rem. (Assumes the 60rem cap.) */
+    margin-left: max(20rem, calc(100vw * 3 / 4 - 60rem));
+    margin-right: 3rem;
+    padding: 2rem 0 4rem;
   }
 }
 
+/* Right-aligned header block (in flow) — sits above the content at every width,
+   so the wider text column never runs under it. */
 .corl-mark {
-  margin: 0 0 2rem auto;
+  margin: 0 0 1.5rem auto;
   width: 170px;
-}
-@media (min-width: 48em) {
-  .corl-mark {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    margin: 0;
-    z-index: 5;
-  }
 }
 .corl-logo {
   display: block;
