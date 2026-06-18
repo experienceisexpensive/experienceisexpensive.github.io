@@ -161,6 +161,21 @@ p { margin: 0 0 1rem; }
 .themes li { margin-bottom: 0.5rem; }
 .themes strong { color: #313131; }
 
+/* Figures (full-width illustrations with caption) */
+.figure {
+  margin: 0 0 1.5rem;
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
 /* People (speakers / organizers) */
 .people {
   list-style: none;
