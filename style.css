@@ -163,7 +163,8 @@ p { margin: 0 0 1rem; }
 
 /* Figures (full-width illustrations with caption) */
 .figure {
-  margin: 0 0 1.5rem;
+  margin: 0 auto 1.5rem;
+  width: 70%;
 }
 .figure img {
   display: block;
@@ -174,6 +175,7 @@ p { margin: 0 0 1rem; }
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: #6b6b6b;
+  text-align: center;
 }
 
 /* People (speakers / organizers) */
