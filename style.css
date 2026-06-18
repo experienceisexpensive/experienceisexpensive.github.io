@@ -164,7 +164,7 @@ p { margin: 0 0 1rem; }
 /* Figures (full-width illustrations with caption) */
 .figure {
   margin: 0 auto 1.5rem;
-  width: 70%;
+  width: 80%;
 }
 .figure img {
   display: block;
